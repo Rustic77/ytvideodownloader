@@ -1,0 +1,6 @@
+# Ignore everything outside website directory
+../*
+!../Procfile
+!../railway.json
+!../nixpacks.toml
+
