@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download YouTube videos in HD quality with our fast and easy online downloader">
+    <title>YouTube Video Downloader - Download HD Videos Free</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-771V3GT222"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-771V3GT222');
+    </script>
+    
+    <!-- Google AdSense - Replace ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+         crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header Ad Unit -->
+    <div class="ad-container ad-header">
+        <!-- AdSense Header Banner - Replace with your ad code -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <div class="ad-placeholder">Advertisement - 728x90</div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar Ad Unit -->
+        <aside class="sidebar">
+            <div class="ad-container ad-sidebar">
+                <!-- AdSense Sidebar - Replace with your ad code -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="vertical"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <div class="ad-placeholder">Advertisement - 160x600</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                    <h1>YouTube Downloader</h1>
+                </div>
+                <p class="subtitle">Download HD videos quickly and easily</p>
+            </header>
+
+            <div class="download-card">
+                <form id="download-form">
+                    <div class="form-group">
+                        <label for="video-url">YouTube Video URL</label>
+                        <input 
+                            type="text" 
+                            id="video-url" 
+                            placeholder="https://www.youtube.com/watch?v=..." 
+                            required
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quality">Video Quality</label>
+                        <select id="quality">
+                            <option value="2160p">4K (2160p)</option>
+                            <option value="1440p">2K (1440p)</option>
+                            <option value="1080p" selected>Full HD (1080p)</option>
+                            <option value="720p">HD (720p)</option>
+                            <option value="480p">SD (480p)</option>
+                            <option value="best">Best Available</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="get-info-btn" class="btn btn-secondary">
+                        Get Video Info
+                    </button>
+                </form>
+
+                <!-- Video Info Section -->
+                <div id="video-info" class="video-info hidden">
+                    <div class="video-preview">
+                        <img id="video-thumbnail" src="" alt="Video thumbnail">
+                        <div class="video-details">
+                            <h3 id="video-title"></h3>
+                            <p class="video-meta">
+                                <span id="video-uploader"></span>
+                                <span class="separator">•</span>
+                                <span id="video-duration"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <button type="button" id="download-btn" class="btn btn-primary">
+                        Download Video
+                    </button>
+                </div>
+
+                <!-- Progress Section -->
+                <div id="progress-section" class="progress-section hidden">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <p id="progress-text" class="progress-text">Starting download...</p>
+                </div>
+
+                <!-- Download Ready Section -->
+                <div id="download-ready" class="download-ready hidden">
+                    <div class="success-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Your download is ready!</h3>
+                    <p>Click the button below to download your video. Link expires after download or in 1 hour.</p>
+                    <a id="download-link" href="#" class="btn btn-success" download>
+                        Download Video
+                    </a>
+                    <button type="button" id="new-download-btn" class="btn btn-secondary">
+                        Download Another Video
+                    </button>
+                </div>
+
+                <!-- Error Section -->
+                <div id="error-section" class="error-section hidden">
+                    <div class="error-icon">⚠️</div>
+                    <p id="error-message"></p>
+                    <button type="button" id="retry-btn" class="btn btn-secondary">
+                        Try Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- In-content Ad Unit -->
+            <div class="ad-container ad-content">
+                <!-- AdSense In-content - Replace with your ad code -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="rectangle"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <div class="ad-placeholder">Advertisement - 300x250</div>
+            </div>
+
+            <!-- Features Section -->
+            <section class="features">
+                <h2>Why Choose Our Downloader?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast Downloads</h3>
+                        <p>Optimized for speed with parallel downloading</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🎬</div>
+                        <h3>HD Quality</h3>
+                        <p>Support for 4K, 2K, 1080p and more</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>Files are deleted automatically after download</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works perfectly on all devices</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>&copy; 2024 YouTube Downloader. For personal use only.</p>
+                <p class="disclaimer">This tool is for downloading videos you have rights to. Please respect copyright laws.</p>
+                <p style="margin-top: 15px; font-size: 0.9rem;">
+                    <a href="/static/privacy.html" style="color: #6b7280; margin: 0 10px; text-decoration: none;">Privacy Policy</a> |
+                    <a href="/static/terms.html" style="color: #6b7280; margin: 0 10px; text-decoration: none;">Terms of Service</a> |
+                    <a href="mailto:your-email@example.com" style="color: #6b7280; margin: 0 10px; text-decoration: none;">Contact</a>
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
+
